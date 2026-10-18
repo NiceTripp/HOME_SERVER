@@ -1,0 +1,54 @@
+version: 1
+services:
+  telegram-gateway:
+    type: application
+    status: planned
+    runtime: node
+    language: typescript
+    responsibilities:
+      - receive and normalize Telegram updates
+      - authorize users and groups
+      - deliver messages for internal services
+    exposes:
+      - name: telegram-webhook
+        path: /telegram/webhook
+        protocol: https
+      - name: internal-message-adapter
+        path: /internal/messages
+        protocol: http
+    depends_on:
+      - postgres
+      - traefik
+    used_by:
+      - iot-water-quality
+    data:
+      stores:
+        - telegram_events
+        - message_deliveries
+    operations:
+      healthcheck: /health
+      readiness: /ready
+      runbook: docs/runbooks/telegram-gateway.md
+
+  iot-water-quality:
+    type: application
+    status: planned
+    runtime: TBD
+    responsibilities:
+      - collect water-quality measurements
+      - validate and analyze measurements
+      - request Telegram alerts through the gateway contract
+    depends_on:
+      - telegram-gateway
+
+  postgres:
+    type: platform
+    status: existing
+    responsibilities:
+      - shared relational persistence
+
+  traefik:
+    type: platform
+    status: existing
+    responsibilities:
+      - ingress and TLS routing

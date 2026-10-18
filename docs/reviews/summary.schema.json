@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HOME_SERVER Review Summary",
+  "type": "object",
+  "required": ["service", "scope", "result", "findings"],
+  "properties": {
+    "service": { "type": "string", "minLength": 1 },
+    "scope": { "type": "array", "items": { "type": "string" } },
+    "result": {
+      "type": "string",
+      "enum": ["pass", "pass-with-findings", "blocked"]
+    },
+    "findings": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "testedCommands": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "implementationSummary": { "type": "string" }
+  },
+  "additionalProperties": false
+}

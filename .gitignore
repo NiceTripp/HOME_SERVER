@@ -1,0 +1,9 @@
+.memory-index/
+.home-server-index/
+.local-memory/
+*.env
+!.env.example
+*.log
+*.pem
+*.key
+*.crt

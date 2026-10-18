@@ -1,0 +1,11 @@
+version: 1
+edges:
+  - from: telegram-gateway
+    to: postgres
+    reason: persistence
+  - from: telegram-gateway
+    to: traefik
+    reason: webhook-ingress-and-tls
+  - from: iot-water-quality
+    to: telegram-gateway
+    reason: alert-delivery

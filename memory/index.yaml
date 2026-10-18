@@ -1,0 +1,20 @@
+version: 1
+policy:
+  canonical_source: git-tracked-files
+  derived_indexes_are_rebuildable: true
+  secrets_allowed: false
+  raw_runtime_data_allowed: false
+  promotion: curated
+entries:
+  - id: global-conventions
+    path: memory/global/conventions.md
+    kind: policy
+    status: active
+  - id: telegram-gateway-overview
+    path: memory/services/telegram-gateway/overview.md
+    kind: service
+    status: planned
+  - id: adr-canonical-context
+    path: memory/decisions/ADR-001-canonical-context-in-git.md
+    kind: decision
+    status: accepted
