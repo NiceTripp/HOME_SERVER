@@ -2,6 +2,7 @@ version: 1
 services:
   telegram-gateway:
     type: application
+    path: apps/telegram-gateway
     status: planned
     runtime: node
     language: typescript

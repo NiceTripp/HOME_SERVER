@@ -20,6 +20,9 @@ The agent must not ingest the whole repository or all historical review
 records. The maps identify the service and boundaries; the targeted query
 identifies recurring risks; source files provide implementation truth.
 
+Application source lives under `apps/`; shared infrastructure lives under
+`platform/`. Service-specific durable memory remains under `memory/services/`.
+
 ## First response from a new agent
 
 Before editing, the agent should return:

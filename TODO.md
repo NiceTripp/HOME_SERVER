@@ -42,6 +42,7 @@ checked only after the corresponding file or behavior exists and has been verifi
 - [x] Add immutable review records and an aggregate finding registry with PR occurrence counts.
 - [x] Add targeted historical finding retrieval before feature implementation.
 - [x] Add portable agent onboarding and cross-provider skill entry points.
+- [x] Add a reusable feature development workflow guide with prompts.
 
 ## Phase 2 - Telegram gateway
 
@@ -57,7 +58,7 @@ checked only after the corresponding file or behavior exists and has been verifi
 
 ### Scaffold and configuration
 
-- [ ] Create `services/telegram-gateway/` with TypeScript/Node.js structure.
+- [ ] Create `apps/telegram-gateway/` with TypeScript/Node.js structure.
 - [ ] Add package scripts for lint, typecheck, build, test, and integration test.
 - [ ] Add strict TypeScript configuration and formatting/lint configuration.
 - [ ] Add Dockerfile using a non-root runtime image.

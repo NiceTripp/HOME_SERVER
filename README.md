@@ -11,6 +11,9 @@ targeted review-history retrieval, handoff format, and completion report.
 The detailed onboarding workflow is in
 [docs/agent-onboarding.md](docs/agent-onboarding.md).
 
+For a copyable feature-by-feature checklist, see
+[docs/feature-development-workflow.md](docs/feature-development-workflow.md).
+
 The canonical context sequence is:
 
 1. [TODO.md](TODO.md) for the implementation tracker.
@@ -32,5 +35,6 @@ loading every skill:
   before completion.
 - `tdd-workflow` for test-first behavior changes.
 
-Canonical context is version-controlled with the code. Generated indexes and
+Application services live under `apps/`; shared infrastructure lives under
+`platform/`. Canonical context is version-controlled with the code. Generated indexes and
 embeddings are derived caches and must be rebuildable.

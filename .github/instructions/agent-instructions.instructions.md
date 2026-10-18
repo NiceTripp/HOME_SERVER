@@ -8,7 +8,7 @@ applyTo: "**"
 ## Architecture
 
 - This repository is a Docker Compose home-server monorepo.
-- Application services belong under `services/`; shared infrastructure belongs
+- Application services belong under `apps/`; shared infrastructure belongs
   under `platform/`.
 - Read `docs/architecture/service-catalog.yaml`,
   `docs/architecture/dependency-graph.yaml`, and `memory/index.yaml` before

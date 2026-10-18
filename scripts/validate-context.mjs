@@ -45,6 +45,10 @@ for (const match of catalog.matchAll(/contract:\s*([^\s#]+)/g)) {
   assertFile(match[1]);
 }
 
+for (const match of catalog.matchAll(/^    path:\s*([^\s#]+)/gm)) {
+  assertFile(match[1]);
+}
+
 const services = new Set(
   [...catalog.matchAll(/^ {2}([a-z0-9][a-z0-9-]*):\s*$/gm)].map(
     (match) => match[1],

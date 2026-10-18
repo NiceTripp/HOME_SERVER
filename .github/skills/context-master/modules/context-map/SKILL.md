@@ -17,6 +17,7 @@ Produce a concise map containing:
 - Tests and validation commands.
 - Security, migration, deployment, and rollback risks.
 - Context surfaces classified as `updated`, `not affected`, or `not needed`.
+- The canonical source path under `apps/<service>/` for application services.
 
 Read the repository instructions and canonical maps first. Identify changed
 surfaces, then query the review registry with

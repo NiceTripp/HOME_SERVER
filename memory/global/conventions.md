@@ -8,7 +8,7 @@ and embeddings are derived data and must be rebuildable from these files.
 
 ## Service boundaries
 
-Application services live under `services/` and shared infrastructure lives
+Application services live under `apps/` and shared infrastructure lives
 under `platform/`. A service may depend on another service's documented
 contract, but not on its private implementation modules.
 
