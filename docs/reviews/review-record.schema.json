@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HOME_SERVER Review Record",
+  "type": "object",
+  "required": ["reviewId", "reviewedAt", "pullRequest", "service", "findings"],
+  "properties": {
+    "reviewId": { "type": "string", "minLength": 1 },
+    "reviewedAt": { "type": "string", "format": "date-time" },
+    "pullRequest": { "type": "string", "minLength": 1 },
+    "service": { "type": "string", "minLength": 1 },
+    "routes": { "type": "array", "items": { "type": "string" } },
+    "findings": {
+      "type": "array",
+      "items": { "$ref": "finding.schema.json" }
+    }
+  },
+  "additionalProperties": false
+}

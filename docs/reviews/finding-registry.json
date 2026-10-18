@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "policy": {
+    "canonicalSource": "git-tracked review records and registry",
+    "promotion": "curated after repeated or broadly reusable confirmed findings"
+  },
+  "findings": []
+}

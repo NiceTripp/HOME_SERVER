@@ -1,6 +1,11 @@
 .memory-index/
 .home-server-index/
 .local-memory/
+agent-skills/
+skills/
+!/.github/
+!/.github/skills/
+!/.github/skills/**
 *.env
 !.env.example
 *.log

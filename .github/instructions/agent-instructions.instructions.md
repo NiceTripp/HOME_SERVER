@@ -1,3 +1,8 @@
+---
+description: "Always-on HOME_SERVER architecture, safety, testing, review, and context rules."
+applyTo: "**"
+---
+
 # HOME_SERVER Project Guidelines
 
 ## Architecture

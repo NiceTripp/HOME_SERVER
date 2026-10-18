@@ -24,8 +24,13 @@ const graph = read("docs/architecture/dependency-graph.yaml");
 const memoryIndex = read("memory/index.yaml");
 const findingSchema = read("docs/reviews/finding.schema.json");
 const summarySchema = read("docs/reviews/summary.schema.json");
+const reviewRecordSchema = read("docs/reviews/review-record.schema.json");
+const findingRegistrySchema = read("docs/reviews/finding-registry.schema.json");
+const findingRegistry = read("docs/reviews/finding-registry.json");
 read("docs/architecture/data-flow.md");
-read(".github/copilot-instructions.md");
+read(".github/instructions/agent-instructions.instructions.md");
+read("AGENTS.md");
+read("docs/agent-onboarding.md");
 read("TODO.md");
 
 for (const match of memoryIndex.matchAll(/path:\s*([^\s#]+)/g)) {
@@ -33,6 +38,10 @@ for (const match of memoryIndex.matchAll(/path:\s*([^\s#]+)/g)) {
 }
 
 for (const match of catalog.matchAll(/runbook:\s*([^\s#]+)/g)) {
+  assertFile(match[1]);
+}
+
+for (const match of catalog.matchAll(/contract:\s*([^\s#]+)/g)) {
   assertFile(match[1]);
 }
 
@@ -52,6 +61,9 @@ for (const match of graph.matchAll(/from:\s*([^\s#]+)|to:\s*([^\s#]+)/g)) {
 for (const [relativePath, content] of [
   ["docs/reviews/finding.schema.json", findingSchema],
   ["docs/reviews/summary.schema.json", summarySchema],
+  ["docs/reviews/review-record.schema.json", reviewRecordSchema],
+  ["docs/reviews/finding-registry.schema.json", findingRegistrySchema],
+  ["docs/reviews/finding-registry.json", findingRegistry],
 ]) {
   try {
     JSON.parse(content);

@@ -5,6 +5,10 @@
   "required": ["service", "scope", "result", "findings"],
   "properties": {
     "service": { "type": "string", "minLength": 1 },
+    "reviewId": { "type": "string", "minLength": 1 },
+    "pullRequest": { "type": "string", "minLength": 1 },
+    "reviewedAt": { "type": "string", "format": "date-time" },
+    "routes": { "type": "array", "items": { "type": "string" } },
     "scope": { "type": "array", "items": { "type": "string" } },
     "result": {
       "type": "string",

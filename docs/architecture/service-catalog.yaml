@@ -16,6 +16,7 @@ services:
       - name: internal-message-adapter
         path: /internal/messages
         protocol: http
+    contract: docs/contracts/telegram-gateway-v1.md
     depends_on:
       - postgres
       - traefik
