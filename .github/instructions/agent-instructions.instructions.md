@@ -29,6 +29,14 @@ applyTo: "**"
 
 - Prefer reuse and the smallest correct change, following the Ponytail
   principle.
+- Search for an existing helper, adapter, validator, or platform capability
+  before adding code, abstraction, or a dependency.
+- Keep the change complete: update affected callers, tests, fixtures, exports,
+  configuration, and documentation.
+- Do not remove validation, error handling, security, accessibility, or tests
+  merely to reduce line count.
+- Mark deliberate limits with `shortcut: <ceiling>, <upgrade trigger>` when
+  the repository needs to carry a known simplification.
 - Update the relevant map, contract, runbook, or memory entry when behavior or
   operational assumptions change.
 - Add or update tests for changed behavior, especially failure and retry paths.

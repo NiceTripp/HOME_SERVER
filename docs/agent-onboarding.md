@@ -83,6 +83,7 @@ bounded and sorted by recurrence. Read linked records under
 |---|---|
 | Understand repository or plan a feature | `context-master` |
 | Implement behavior change | `tdd-workflow`, plus domain skills |
+| Apply minimal/reuse-first engineering rules | Ponytail overlay in `AGENTS.md` and `agent-instructions` |
 | Dockerfile, Compose, deploy, incident | `docker-master` |
 | Run validation before review or after fixes | `verification-loop` |
 | PR or code review | `review-master` |
@@ -100,6 +101,10 @@ The canonical skill content is in:
 .github/skills/tdd-workflow/
 .github/skills/verification-loop/
 ```
+
+The repository also includes an adapted `ponytail-lean-review` module inside
+`review-master/modules/`. It is not a separate runtime plugin or finding
+registry.
 
 For a provider that does not discover `SKILL.md` automatically, explicitly
 instruct it to read `AGENTS.md`, then the router named by the task. Do not paste

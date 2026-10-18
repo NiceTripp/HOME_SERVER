@@ -3,6 +3,7 @@
 .local-memory/
 agent-skills/
 skills/
+/ponytail/
 !/.github/
 !/.github/skills/
 !/.github/skills/**

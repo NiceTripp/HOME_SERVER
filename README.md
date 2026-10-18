@@ -34,6 +34,8 @@ loading every skill:
 - `verification-loop` for executable validation before review, after fixes, and
   before completion.
 - `tdd-workflow` for test-first behavior changes.
+- Ponytail principles for reuse-first, smallest-complete implementation; the
+  focused `ponytail-lean-review` module runs through `review-master`.
 
 Application services live under `apps/`; shared infrastructure lives under
 `platform/`. Canonical context is version-controlled with the code. Generated indexes and

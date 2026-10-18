@@ -167,6 +167,8 @@ diff and routes to:
 - `security-review`, `test-gap-audit`, and `test-review` for security or test
   signals;
 - `postgresql-code-review` and `postgresql-optimization` for database changes;
+- `ponytail-lean-review` for concrete reuse, over-abstraction, completeness,
+  and shortcut-debt findings;
 - `docker-master` for Dockerfile, Compose, deployment, and runtime changes;
 - `architecture-review`, `backend-patterns`, and `context-master` for
   boundaries and repository context;
@@ -178,7 +180,8 @@ local working-tree review is supported as an early feedback loop, not a
 replacement for reviewing the final PR diff.
 
 The review router owns the review, database, backend, frontend, test, and
-security modules. `docker-master`, `context-master`, and the independent
+security modules, including the adapted Ponytail lean review. `docker-master`,
+`context-master`, and the independent
 `verification-loop` skill remain separate lifecycle/context/validation routers
 and are delegated to rather than copied into `review-master`.
 

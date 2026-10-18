@@ -31,6 +31,7 @@ when the implementation needs historical root-cause detail.
 - [Backend patterns](./modules/backend-patterns/SKILL.md)
 - [PostgreSQL code review](./modules/postgresql-code-review/SKILL.md)
 - [PostgreSQL optimization](./modules/postgresql-optimization/SKILL.md)
+- [Ponytail lean review](./modules/ponytail-lean-review/SKILL.md)
 - [React/Next best practices](./modules/vercel-react-best-practices/SKILL.md)
 - [React composition](./modules/react-composition-patterns/SKILL.md)
 - [Responsive web review](./modules/web-design-review/SKILL.md)

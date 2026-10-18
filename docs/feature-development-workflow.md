@@ -93,7 +93,36 @@ If `payment-service` does not exist, stop and identify the required service
 catalog, dependency graph, data-flow, contract, runbook, and memory changes
 before implementing.
 
-## 2. Finalize contract and design
+## 2. Apply the Ponytail engineering overlay
+
+Ponytail is not a replacement for `context-master`, `tdd-workflow`,
+`verification-loop`, or `review-master`. Use its principles throughout the
+feature:
+
+- Search for an existing helper, adapter, validator, or platform capability
+  before adding code.
+- Choose the smallest complete change, not the fewest lines at the cost of
+  validation or correctness.
+- Do not add speculative abstractions, options, wrappers, or dependencies.
+- Check affected callers, tests, fixtures, exports, configuration, and docs.
+- Keep validation, error handling, security, accessibility, and tests intact.
+- Mark a deliberate limit with
+  `shortcut: <ceiling>, <upgrade trigger>` when the simplification needs to
+  be carried forward.
+
+Ask the agent:
+
+```text
+Áp dụng Ponytail engineering rules cho payment feature:
+- tìm code/helper/adapter/validator có sẵn trước khi viết mới;
+- chọn smallest complete change;
+- không thêm abstraction hoặc dependency chưa cần;
+- kiểm tra callers, tests, fixtures, exports, config và docs bị ảnh hưởng;
+- không bỏ validation, error handling, security hoặc tests;
+- ghi shortcut comment nếu có giới hạn có chủ đích.
+```
+
+## 3. Finalize contract and design
 
 Ask the agent:
 
@@ -145,7 +174,7 @@ Thiết kế schema payment với:
 - migration and rollback plan.
 ```
 
-## 3. Implement with TDD
+## 4. Implement with TDD
 
 Ask the agent:
 
@@ -178,7 +207,7 @@ Dùng docker-master để thêm service vào Compose, healthcheck, readiness,
 non-root runtime, secrets và rollback.
 ```
 
-## 4. Run independent verification
+## 5. Run independent verification
 
 `verification-loop` is a top-level skill, not a review module.
 
@@ -204,7 +233,7 @@ Báo cáo rõ passed, failed, skipped, lý do skipped và remaining risks.
 
 Do not claim a check passed if it was not run.
 
-## 5. Review the PR
+## 6. Review the PR
 
 Ask the agent:
 
@@ -238,13 +267,17 @@ postgresql-code-review
 postgresql-optimization
 architecture-review
 backend-patterns
+ponytail-lean-review
 docker-master
 context-master
 ```
 
-Only applicable routes should run.
+Only applicable routes should run. `ponytail-lean-review` checks concrete
+reuse, over-abstraction, incomplete caller/test/config reach, and shortcut
+debt. It does not duplicate security, PostgreSQL, Docker, architecture, or
+test review.
 
-## 6. Fix findings
+## 7. Fix findings
 
 Example findings:
 
@@ -270,7 +303,7 @@ After fixing, run focused tests and verification-loop. Do not edit the old
 review record; prepare a new re-review record.
 ```
 
-## 7. Verify and re-review
+## 8. Verify and re-review
 
 First run verification again:
 
@@ -308,7 +341,7 @@ pr-25-review-02.json
 HIGH and CRITICAL findings must be fixed or explicitly acknowledged before
 merge or deployment.
 
-## 8. Update architecture context
+## 9. Update architecture context
 
 After code and review are stable:
 
@@ -330,7 +363,7 @@ Phân loại từng surface là updated, not affected hoặc not needed. Chạy:
 node scripts/validate-context.mjs
 ```
 
-## 9. Promote verified memory
+## 10. Promote verified memory
 
 Only promote memory after:
 
@@ -390,7 +423,7 @@ memory/services/payment-service/webhook-idempotency.md
 Then add it to `memory/index.yaml`. Do not copy all review records into memory:
 records are evidence, while memory contains concise verified lessons.
 
-## 10. Close the PR
+## 11. Close the PR
 
 Ask the agent:
 
@@ -413,6 +446,10 @@ context-master
   -> context-map + targeted findings + relevant memory
   -> contract and acceptance criteria
 
+Ponytail overlay
+  -> reuse first, smallest complete change, no speculative abstraction
+  -> check callers/tests/config and record deliberate shortcuts
+
 tdd-workflow
   -> failing tests -> implementation -> refactor
 
@@ -423,7 +460,8 @@ verification-loop
   -> lint -> typecheck -> build -> tests -> security -> Docker -> context
 
 review-master
-  -> specialist review -> review record -> finding registry
+  -> specialist review + ponytail-lean-review
+  -> review record -> finding registry
 
 fix findings
   -> verification-loop

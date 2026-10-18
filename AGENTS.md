@@ -37,6 +37,10 @@ instructions, not provider-specific APIs:
   before completion.
 - `tdd-workflow`: test-first implementation for behavior changes.
 
+`review-master` includes `ponytail-lean-review` for concrete reuse,
+over-abstraction, completeness, and shortcut-debt findings. It does not
+replace security, PostgreSQL, Docker, architecture, or test specialists.
+
 Read the selected router `SKILL.md`, then the smallest relevant module
 `SKILL.md` and its referenced resources. Do not load every skill by default.
 
@@ -44,6 +48,10 @@ Read the selected router `SKILL.md`, then the smallest relevant module
 
 - Never expose or commit secrets, tokens, private keys, dumps, or raw logs.
 - Preserve service boundaries and documented contracts.
+- Prefer existing helpers and platform capabilities before adding abstractions
+  or dependencies.
+- Keep changes complete across callers, tests, fixtures, configuration,
+  exports, and documentation.
 - Add or update tests for changed behavior and failure paths.
 - Run the smallest relevant validation commands.
 - HIGH and CRITICAL findings block merge or deployment until fixed or explicitly

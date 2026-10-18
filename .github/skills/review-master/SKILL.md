@@ -57,6 +57,7 @@ used. Do not invent PR metadata.
 |---|---|
 | Any source, configuration, or test implementation | `code-review` |
 | PR scope, acceptance criteria, docs, runbook, or merge readiness | `pr-review` |
+| Reuse, over-abstraction, incomplete reach, or shortcut debt | `ponytail-lean-review` |
 | Auth, webhook, secrets, input, output, SSRF, injection, logging, exposure | `security-review` |
 | Missing, weak, stale, or false-positive tests | `test-gap-audit` + `test-review` |
 | PostgreSQL schema, migration, query, repository, transaction, or index | `postgresql-code-review` |
@@ -87,6 +88,7 @@ review-master/
     ├── mobile-web-acceptance/
     ├── postgresql-code-review/
     ├── postgresql-optimization/
+    ├── ponytail-lean-review/
     ├── pr-review/
     ├── react-composition-patterns/
     ├── react-native-review/

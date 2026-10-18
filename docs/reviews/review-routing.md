@@ -11,6 +11,7 @@ sufficient set based on the changed surfaces. `docker-master` and
 | Change surface | Required skills |
 |---|---|
 | TypeScript behavior | `tdd-workflow`, `review-master/modules/code-review`, `verification-loop` |
+| Reuse, over-abstraction, incomplete reach, or shortcut debt | `review-master/modules/ponytail-lean-review` |
 | PostgreSQL schema/query/migration | `review-master/modules/postgresql-code-review`, `review-master/modules/test-gap-audit` |
 | Query or high-volume event path | `review-master/modules/postgresql-optimization` |
 | Dockerfile or Compose | `docker-master` (routes to foundations/build/Compose/review modules) |

@@ -43,6 +43,7 @@ checked only after the corresponding file or behavior exists and has been verifi
 - [x] Add targeted historical finding retrieval before feature implementation.
 - [x] Add portable agent onboarding and cross-provider skill entry points.
 - [x] Add a reusable feature development workflow guide with prompts.
+- [x] Adapt Ponytail engineering rules and lean review into `review-master`.
 
 ## Phase 2 - Telegram gateway
 
